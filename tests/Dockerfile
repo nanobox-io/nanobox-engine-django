@@ -4,11 +4,11 @@ FROM nanobox/build
 RUN rm -rf /opt/engines/*
 
 # Create folders for this engine
-RUN mkdir -p /opt/engines/template/bin && \
-    mkdir -p /opt/engines/template/lib && \
-    mkdir -p /opt/engines/template/templates
+RUN mkdir -p /opt/engines/django/bin && \
+    mkdir -p /opt/engines/django/lib && \
+    mkdir -p /opt/engines/django/templates
 
 # Add in this engine's files
-ADD bin/. /opt/engines/template/bin
-ADD lib/. /opt/engines/template/lib
-ADD templates/. /opt/engines/template/templates
+ADD bin/. /opt/engines/django/bin
+ADD lib/. /opt/engines/django/lib
+ADD templates/. /opt/engines/django/templates

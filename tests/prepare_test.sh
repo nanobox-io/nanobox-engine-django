@@ -1,7 +1,7 @@
-echo running tests for template
+echo running tests for django
 UUID=$(cat /proc/sys/kernel/random/uuid)
 
-pass "Unable to start the $VERSION container" docker run --privileged=true -d --name $UUID nanobox/build-template sleep 365d
+pass "Unable to start the $VERSION container" docker run --privileged=true -d --name $UUID nanobox/build-django sleep 365d
 
 defer docker kill $UUID
 
@@ -11,4 +11,4 @@ pass "Failed to reate dir for environment variables" docker exec $UUID mkdir -p 
 
 pass "Failed to update pkgsrc" docker exec $UUID /data/bin/pkgin up -y
 
-pass "Failed to run prepare script" docker exec $UUID bash -c "cd /opt/engines/template/bin; PATH=/data/sbin:/data/bin:\$PATH ./prepare '$(payload default-prepare)'"
+pass "Failed to run prepare script" docker exec $UUID bash -c "cd /opt/engines/django/bin; PATH=/data/sbin:/data/bin:\$PATH ./prepare '$(payload default-prepare)'"

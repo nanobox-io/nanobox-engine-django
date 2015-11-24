@@ -1,14 +1,16 @@
 # The Enginefile provides Nanobox with information about the engine
 # View the documentation at https://docs.nanobox.io/engines/enginefile/
 
-name: 'engine-name'
+name: 'django'
 version: '0.1.0'
-summary: 'A short, one-sentence summary of the engine.'
-language: ruby
+summary: 'Nanobox engine for the django framework'
+language: python
 stability: 'stable'
 license: 'MIT'
 generic: false
+overlays:
+  - python
 
 authors:
-  - tyler@nanobox.io
+  - braxton@nanobox.io
   - scott@nanobox.io
